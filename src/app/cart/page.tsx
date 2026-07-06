@@ -180,8 +180,8 @@ export default function Cart() {
               </div>
 
               <div className="border-t-2 border-outline-variant pt-4 flex justify-between items-baseline mt-2 gap-4">
-                <span className="font-headline-lg text-headline-lg uppercase">TOTAL</span>
-                <span className="font-display-md text-display-md text-primary whitespace-nowrap">
+                <span className="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">TOTAL</span>
+                <span className="font-display-md text-headline-lg-mobile md:text-display-md text-primary whitespace-nowrap">
                   Rp {grandTotal.toLocaleString('id-ID')}
                 </span>
               </div>
