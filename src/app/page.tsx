@@ -26,11 +26,11 @@ export default function Home() {
   };
 
   return (
-    <main className="py-6 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+    <main className="pt-6 pb-24 max-w-7xl mx-auto w-full">
       {/* Hero Section */}
-      <section className="relative mb-stack-xl">
+      <section className="relative px-margin-mobile md:px-margin-desktop mb-stack-xl">
         <Link href="/shop" className="block group">
-          <div className="relative overflow-hidden border-2 border-on-background sticker-effect bg-surface-container-low rounded-lg min-h-[380px] sm:min-h-0 sm:aspect-[16/9] flex flex-col items-center justify-center p-stack-lg cursor-pointer">
+          <div className="relative overflow-hidden border-2 border-on-background sticker-effect bg-surface-container-low rounded-lg min-h-[380px] sm:min-h-0 sm:aspect-[16/9] flex flex-col items-center justify-center p-6 sm:p-stack-lg cursor-pointer">
             <div className="absolute inset-0 z-0 opacity-20 group-hover:opacity-35 transition-opacity duration-300">
               <div className="w-full h-full bg-gradient-to-tr from-primary/40 to-transparent"></div>
             </div>
@@ -75,7 +75,7 @@ export default function Home() {
       </div>
 
       {/* Featured Collections (Bento Style) */}
-      <section className="mb-stack-xl">
+      <section className="px-margin-mobile md:px-margin-desktop mb-stack-xl">
         <div className="flex justify-between items-end mb-stack-md border-b-2 border-outline-variant pb-2">
           <h3 className="font-headline-lg-mobile text-headline-lg-mobile uppercase underline decoration-primary decoration-4 underline-offset-4">
             FEATURED CATEGORIES
@@ -144,14 +144,14 @@ export default function Home() {
 
       {/* Trending Now Scroller */}
       <section className="mb-stack-xl">
-        <div className="flex justify-between items-center mb-stack-md border-b-2 border-outline-variant pb-2">
+        <div className="px-margin-mobile md:px-margin-desktop flex justify-between items-center mb-stack-md border-b-2 border-outline-variant pb-2">
           <h3 className="font-headline-lg-mobile text-headline-lg-mobile uppercase">TRENDING NOW</h3>
           <div className="flex gap-2">
             <span className="w-2 h-2 bg-primary rounded-full"></span>
             <span className="w-2 h-2 bg-outline-variant rounded-full"></span>
           </div>
         </div>
-        <div className="flex overflow-x-auto scroller-hide gap-stack-md pb-stack-md">
+        <div className="flex overflow-x-auto scroller-hide gap-stack-md px-margin-mobile md:px-margin-desktop pb-stack-md">
           {trendingProducts.map((product) => {
             if (!product) return null;
             return (
@@ -181,8 +181,8 @@ export default function Home() {
       </section>
 
       {/* Newsletter CTA / Zine Style */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-stack-xl">
-        <div className="border-2 border-on-background p-stack-lg rounded-lg bg-surface-container relative overflow-hidden flex flex-col justify-between min-h-[250px]">
+      <section className="px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-gutter mb-stack-xl">
+        <div className="border-2 border-on-background p-6 sm:p-stack-lg rounded-lg bg-surface-container relative overflow-hidden flex flex-col justify-between min-h-[250px]">
           <div className="absolute top-0 right-0 opacity-10">
             <span className="material-symbols-outlined text-[120px] rotate-12 select-none">
               settings_input_component
@@ -203,7 +203,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-on-primary-fixed text-primary-fixed border-2 border-primary sticker-effect p-stack-lg rounded-lg grain-texture overflow-hidden flex flex-col justify-center min-h-[250px]">
+        <div className="bg-on-primary-fixed text-primary-fixed border-2 border-primary sticker-effect p-6 sm:p-stack-lg rounded-lg grain-texture overflow-hidden flex flex-col justify-center min-h-[250px]">
           <div className="relative z-10">
             <h3 className="font-display-md text-display-md leading-none mb-stack-sm italic">
               JOIN THE<br />CONVOY
