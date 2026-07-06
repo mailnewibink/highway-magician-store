@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HWY MAGICIAN - Shopping Cart</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed-variant": "#852400",
+            "surface-container": "#201f1f",
+            "inverse-primary": "#ad3200",
+            "on-tertiary": "#2f3131",
+            "outline": "#ac897e",
+            "surface-container-low": "#1c1b1b",
+            "on-error": "#690005",
+            "primary-fixed-dim": "#ffb59e",
+            "surface-bright": "#393939",
+            "on-surface-variant": "#e6beb2",
+            "primary": "#ffb59e",
+            "surface-container-highest": "#353534",
+            "background": "#131313",
+            "error": "#ffb4ab",
+            "outline-variant": "#5c4037",
+            "on-background": "#e5e2e1",
+            "on-tertiary-fixed-variant": "#454747",
+            "surface-container-lowest": "#0e0e0e",
+            "tertiary": "#c6c6c6",
+            "surface-tint": "#ffb59e",
+            "on-secondary-fixed-variant": "#004f51",
+            "surface-variant": "#353534",
+            "on-primary-fixed": "#3a0b00",
+            "primary-container": "#ff5719",
+            "on-secondary-fixed": "#002020",
+            "tertiary-fixed": "#e2e2e2",
+            "secondary": "#46eaed",
+            "secondary-fixed-dim": "#2ddbde",
+            "on-primary-container": "#521300",
+            "tertiary-container": "#909191",
+            "on-error-container": "#ffdad6",
+            "surface-container-high": "#2a2a2a",
+            "on-secondary-container": "#005253",
+            "on-surface": "#e5e2e1",
+            "tertiary-fixed-dim": "#c6c6c6",
+            "on-secondary": "#003738",
+            "on-tertiary-fixed": "#1a1c1c",
+            "error-container": "#93000a",
+            "on-tertiary-container": "#282a2a",
+            "on-primary": "#5e1700",
+            "inverse-on-surface": "#313030",
+            "secondary-fixed": "#5af8fb",
+            "inverse-surface": "#e5e2e1",
+            "primary-fixed": "#ffdbd0",
+            "surface": "#131313",
+            "secondary-container": "#00cdd0",
+            "surface-dim": "#131313"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "stack-lg": "32px",
+            "stack-xl": "64px",
+            "margin-mobile": "24px",
+            "margin-desktop": "64px",
+            "gutter": "24px",
+            "stack-sm": "8px",
+            "unit": "8px",
+            "stack-md": "16px"
+          },
+          "fontFamily": {
+            "headline-lg": ["Bebas Neue"],
+            "body-lg": ["Space Grotesk"],
+            "label-lg": ["Space Grotesk"],
+            "body-md": ["Space Grotesk"],
+            "headline-lg-mobile": ["Bebas Neue"],
+            "display-md": ["Bebas Neue"],
+            "label-sm": ["Space Grotesk"],
+            "display-lg": ["Bebas Neue"]
+          },
+          "fontSize": {
+            "headline-lg": ["32px", {"lineHeight": "32px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "label-lg": ["14px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-lg-mobile": ["28px", {"lineHeight": "28px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+            "display-md": ["48px", {"lineHeight": "44px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+            "label-sm": ["12px", {"lineHeight": "14px", "fontWeight": "500"}],
+            "display-lg": ["80px", {"lineHeight": "72px", "letterSpacing": "0.02em", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .sticker-shadow {
+      box-shadow: 4px 4px 0px 0px #ffb59e;
+    }
+    .sticker-shadow-sm {
+      box-shadow: 2px 2px 0px 0px #ffb59e;
+    }
+    .active-press:active {
+      transform: translate(2px, 2px);
+      box-shadow: 0px 0px 0px 0px #ffb59e;
+    }
+    .grain {
+      background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+      opacity: 0.05;
+      pointer-events: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar from JSON -->
+<header class="fixed top-0 w-full z-50 border-b-2 border-outline-variant bg-background shadow-[4px_4px_0px_0px_rgba(255,181,158,1)] flex justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-md">
+<div class="flex items-center gap-4">
+<button class="active:translate-y-0.5 active:shadow-none transition-all hover:bg-primary hover:text-on-primary p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile tracking-tighter text-on-background uppercase">HighWaY MAGICIAN</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="active:translate-y-0.5 active:shadow-none transition-all hover:bg-primary hover:text-on-primary p-2 relative">
+<span class="material-symbols-outlined text-primary" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute top-0 right-0 bg-secondary text-on-secondary text-[10px] font-bold px-1 rounded-sm">3</span>
+</button>
+</div>
+</header>
+<main class="pt-32 pb-40 min-h-screen px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto relative">
+<!-- Atmospheric background -->
+<div class="fixed inset-0 grain"></div>
+<div class="flex flex-col md:grid md:grid-cols-12 gap-gutter">
+<!-- Cart Column -->
+<section class="md:col-span-8 flex flex-col gap-stack-lg">
+<div class="flex items-center justify-between border-b-2 border-outline-variant pb-stack-sm">
+<h2 class="font-display-md text-display-md uppercase">YOUR GARAGE</h2>
+<span class="font-label-lg text-label-lg text-primary">3 ITEMS LOADED</span>
+</div>
+<!-- Cart Item 1 -->
+<div class="bg-surface-container-low border-2 border-outline-variant p-4 flex gap-4 md:gap-6 relative overflow-hidden group sticker-shadow">
+<div class="w-24 h-24 md:w-32 md:h-32 bg-surface-container-highest border-2 border-outline overflow-hidden shrink-0">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A studio shot of a high-end streetwear hoodie in charcoal black, featuring a large vibrant orange graphic of a winged piston on the back. The lighting is dramatic and edgy, highlighting the thick cotton texture and the rebellious automotive-inspired design. Modern brutalist fashion photography aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtF-TIcCMNuVRBFpEw0JXZRSDLLYrAfA1kcYgEYUFwA2mp8PqtFU4FIJNGYv-nrW_ntycv16eModpTlLdoOsKpgwkI_mwvGYYHMX5oZAoQE_CWezXrl7_pajhs9NMUZOewLcLaXI-8Nrtw_YcjMrs4MlMffUQ5gW59U7AM__QsMa04nyBRuGk7ViUW7xVROLP9LT_wnOqDbD4JFg_9qqJO65x7lU5UjpyWxNx2gQZDm_EGeq9Vl9ejYnz57pYc1K83IwMxsSU6NWU"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile uppercase leading-tight">PISTON WING HOODIE</h3>
+<button class="text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<p class="font-label-sm text-label-sm text-secondary uppercase mt-1">BLACK / OVERSIZED / XL</p>
+</div>
+<div class="flex justify-between items-end">
+<!-- Quantity Selector -->
+<div class="flex items-center border-2 border-outline-variant bg-background">
+<button class="px-3 py-1 hover:bg-primary hover:text-on-primary transition-colors border-r-2 border-outline-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="remove">remove</span>
+</button>
+<span class="px-4 font-bold font-body-md">1</span>
+<button class="px-3 py-1 hover:bg-primary hover:text-on-primary transition-colors border-l-2 border-outline-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+<p class="font-headline-lg text-headline-lg">Rp 1.800.000</p>
+</div>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="bg-surface-container-low border-2 border-outline-variant p-4 flex gap-4 md:gap-6 relative overflow-hidden group sticker-shadow">
+<div class="w-24 h-24 md:w-32 md:h-32 bg-surface-container-highest border-2 border-outline overflow-hidden shrink-0">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A pair of high-contrast streetwear graphics on a heavy canvas tote bag. The design features industrial typography and chrome teal accents. Low-angle lighting creating sharp shadows, capturing a rugged, 'garage-built' aesthetic for a modern custom car enthusiast brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARNbnGLDC9nyIGQXfjet3ztq_RdwqJmsvVY3r1hWRqZbrolZJ9lihEeIRi-YurZkE8te81Ps_-jmOCrhMFC1N-oeWqsAlwwemdn9AB1z9C_NBS8XVvXlXg7EbA7QK_sKhiGVmMmbVCMbiDpoXBrJPxZE0xRzook9wB-L8a57jGcO_gFO2kVRa9XA2O2CGN5bhEqC7ftLANB_4gBtcYLAW6xbbzS_tCsFh_1Ns5_lmD8UqtLCdfYd_ParOwS9oeS6C259JGAcaz7Cc"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile uppercase leading-tight">CUSTOM TEAL TOTE</h3>
+<button class="text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<p class="font-label-sm text-label-sm text-secondary uppercase mt-1">CHROME TEAL / OS</p>
+</div>
+<div class="flex justify-between items-end">
+<div class="flex items-center border-2 border-outline-variant bg-background">
+<button class="px-3 py-1 hover:bg-primary hover:text-on-primary transition-colors border-r-2 border-outline-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="remove">remove</span>
+</button>
+<span class="px-4 font-bold font-body-md">2</span>
+<button class="px-3 py-1 hover:bg-primary hover:text-on-primary transition-colors border-l-2 border-outline-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+<p class="font-headline-lg text-headline-lg">Rp 675.000</p>
+</div>
+</div>
+</div>
+<!-- Cart Item 3 -->
+<div class="bg-surface-container-low border-2 border-outline-variant p-4 flex gap-4 md:gap-6 relative overflow-hidden group sticker-shadow">
+<div class="w-24 h-24 md:w-32 md:h-32 bg-surface-container-highest border-2 border-outline overflow-hidden shrink-0">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A set of vintage-style mechanic's vinyl stickers with distressed textures and bold orange and teal colors. The stickers depict eyes, pistons, and bolt lightning icons. Captured in a macro shot on a metallic dark surface with high-contrast cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVns3K7Yz_GEc8ndXbA1mNT-mDXDlMftrgi2dYmuCdXavdsZYUubNnt0j538aNMR-Zv6gf2vcEEnTJa2i2HlSZ4biRJ8q0zQu9wtZp3cm3m2I9r71lRnAhvcEJ7jrOc038kKzsI6SKLul667emK0FFTBWU9AXDb1qz2LZIQ0Qzcl3j8M3HBj1zl1JEcA28gjMVlzjyZVfZazO_B4oOUQrs-w1KyzykTzwS0g8pPq2ETeWxzISI3InpPeB7PHPg9MRcoV-ydkIntxE"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile uppercase leading-tight">LOGO SLAP PACK</h3>
+<button class="text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<p class="font-label-sm text-label-sm text-secondary uppercase mt-1">MULTI / 10 PACK</p>
+</div>
+<div class="flex justify-between items-end">
+<div class="flex items-center border-2 border-outline-variant bg-background">
+<button class="px-3 py-1 hover:bg-primary hover:text-on-primary transition-colors border-r-2 border-outline-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="remove">remove</span>
+</button>
+<span class="px-4 font-bold font-body-md">1</span>
+<button class="px-3 py-1 hover:bg-primary hover:text-on-primary transition-colors border-l-2 border-outline-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+<p class="font-headline-lg text-headline-lg">Rp 225.000</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Order Summary Column -->
+<aside class="md:col-span-4">
+<div class="bg-surface-container border-2 border-outline-variant p-6 flex flex-col gap-6 sticker-shadow sticky top-32">
+<h2 class="font-headline-lg text-headline-lg uppercase border-b-2 border-outline-variant pb-2">SPEC SHEET</h2>
+<div class="flex flex-col gap-4 font-body-md">
+<div class="flex justify-between">
+<span class="text-on-surface-variant uppercase">SUBTOTAL</span>
+<span class="font-bold">Rp 3.375.000</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant uppercase">SHIPPING (STD)</span>
+<span class="font-bold text-secondary">GRATIS</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant uppercase">EST. TAX</span>
+<span class="font-bold">Rp 270.000</span>
+</div>
+<div class="border-t-2 border-outline-variant pt-4 flex justify-between items-baseline mt-2">
+<span class="font-headline-lg text-headline-lg uppercase">TOTAL</span>
+<span class="font-display-md text-display-md text-primary">Rp 3.645.000</span>
+</div>
+</div>
+<!-- Promo Input -->
+<div class="flex flex-col gap-2 mt-4">
+<label class="font-label-sm text-label-sm uppercase text-secondary">DISCOUNT CODE</label>
+<div class="flex">
+<input class="bg-background border-2 border-outline-variant focus:border-secondary focus:ring-0 text-on-background px-4 py-3 uppercase font-label-lg w-full" placeholder="ENTER CODE" type="text"/>
+<button class="bg-surface-container-highest px-4 border-2 border-l-0 border-outline-variant font-label-lg uppercase hover:bg-primary hover:text-on-primary transition-colors">APPLY</button>
+</div>
+</div>
+<!-- CTA -->
+<button class="group relative w-full bg-primary-container text-on-primary-container p-6 border-2 border-black active-press transition-all sticker-shadow mt-4">
+<span class="font-display-md text-display-md uppercase flex items-center justify-center gap-4">
+              ROUTE TO CHECKOUT
+              <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</span>
+</button>
+<div class="flex items-center justify-center gap-4 mt-2">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="verified_user">verified_user</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">SECURE GARAGE PAYMENTS</p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- BottomNavBar from JSON -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 border-t-2 border-outline-variant bg-surface-container-low flex justify-around items-center h-20 px-margin-mobile pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-lg text-label-lg uppercase">HOME</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-4 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-label-lg text-label-lg uppercase">SHOP</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-lg text-label-lg uppercase">SEARCH</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-lg text-label-lg uppercase">PROFILE</span>
+</a>
+</nav>
+<script>
+    // Micro-interaction for quantity buttons
+    document.querySelectorAll('button').forEach(button => {
+      button.addEventListener('mousedown', () => {
+        button.style.transform = 'scale(0.95)';
+      });
+      button.addEventListener('mouseup', () => {
+        button.style.transform = 'scale(1)';
+      });
+      button.addEventListener('mouseleave', () => {
+        button.style.transform = 'scale(1)';
+      });
+    });
+  </script>
+</body></html>

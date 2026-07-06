@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HWY MAGICIAN | SHOP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#852400",
+                        "surface-container": "#201f1f",
+                        "inverse-primary": "#ad3200",
+                        "on-tertiary": "#2f3131",
+                        "outline": "#ac897e",
+                        "surface-container-low": "#1c1b1b",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#ffb59e",
+                        "surface-bright": "#393939",
+                        "on-surface-variant": "#e6beb2",
+                        "primary": "#ffb59e",
+                        "surface-container-highest": "#353534",
+                        "background": "#131313",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#5c4037",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "surface-container-lowest": "#0e0e0e",
+                        "tertiary": "#c6c6c6",
+                        "surface-tint": "#ffb59e",
+                        "on-secondary-fixed-variant": "#004f51",
+                        "surface-variant": "#353534",
+                        "on-primary-fixed": "#3a0b00",
+                        "primary-container": "#ff5719",
+                        "on-secondary-fixed": "#002020",
+                        "tertiary-fixed": "#e2e2e2",
+                        "secondary": "#46eaed",
+                        "secondary-fixed-dim": "#2ddbde",
+                        "on-primary-container": "#521300",
+                        "tertiary-container": "#909191",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-container": "#005253",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "on-secondary": "#003738",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#282a2a",
+                        "on-primary": "#5e1700",
+                        "inverse-on-surface": "#313030",
+                        "secondary-fixed": "#5af8fb",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed": "#ffdbd0",
+                        "surface": "#131313",
+                        "secondary-container": "#00cdd0",
+                        "surface-dim": "#131313"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "stack-xl": "64px",
+                        "margin-mobile": "24px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "stack-sm": "8px",
+                        "unit": "8px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Bebas Neue"],
+                        "body-lg": ["Space Grotesk"],
+                        "label-lg": ["Space Grotesk"],
+                        "body-md": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Bebas Neue"],
+                        "display-md": ["Bebas Neue"],
+                        "label-sm": ["Space Grotesk"],
+                        "display-lg": ["Bebas Neue"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "32px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "28px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                        "display-md": ["48px", {"lineHeight": "44px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "14px", "fontWeight": "500"}],
+                        "display-lg": ["80px", {"lineHeight": "72px", "letterSpacing": "0.02em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        @layer base {
+            body {
+                @apply bg-background text-on-background font-body-md;
+                background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+            }
+        }
+        .sticker-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(255,181,158,1);
+        }
+        .sticker-shadow:active {
+            box-shadow: 1px 1px 0px 0px rgba(255,181,158,1);
+            transform: translate(3px, 3px);
+        }
+        .grainy-bg {
+            position: relative;
+        }
+        .grainy-bg::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        .active-tab {
+            @apply bg-primary text-on-primary rounded-full px-4 py-1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 border-b-2 border-outline-variant shadow-[4px_4px_0px_0px_rgba(255,181,158,1)] flex justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-md bg-background">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary active:translate-y-0.5 active:shadow-none transition-all">menu</button>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg tracking-tighter text-on-background"></h1><h1 class="font-headline-lg-mobile text-headline-lg-mobile tracking-tighter text-on-background uppercase cursor-text" data-stitch-added-classes="cursor-text" spellcheck="false" style="--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; --tw-text-opacity: 1; color: rgb(229, 226, 225); outline: none !important; box-shadow: none !important;">HighWaY MAGICIAN</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="font-label-lg text-label-lg text-primary hover:underline" href="#">HOME</a>
+<a class="font-label-lg text-label-lg text-primary hover:underline" href="#">SHOP</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="#">ARCHIVE</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="#">TEAM</a>
+</nav>
+<button class="material-symbols-outlined text-primary hover:bg-primary hover:text-on-primary transition-colors duration-150 p-2 rounded">shopping_cart</button>
+</div>
+</header>
+<main class="mt-24 px-margin-mobile md:px-margin-desktop mb-stack-xl">
+<!-- Hero Branding -->
+<section class="mb-stack-xl border-4 border-primary p-stack-lg grainy-bg bg-surface-container-low shadow-[8px_8px_0px_0px_#00CED1]">
+<div class="flex flex-col md:flex-row justify-between items-end gap-gutter">
+<div>
+<span class="inline-block bg-secondary text-on-secondary px-2 py-1 font-label-lg text-label-lg mb-2">SEASON 02 RELEASE</span>
+<h2 class="font-display-md md:font-display-lg text-display-md md:text-display-lg text-on-surface">KUSTOM BUILT STREETWEAR</h2>
+</div>
+<div class="text-right">
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">The high-octane gear for the asphalt-obsessed. Garage-built quality, race-inspired aesthetics.</p>
+</div>
+</div>
+</section>
+<!-- Kustom Filter Bar -->
+<section class="flex flex-col md:flex-row justify-between gap-4 mb-gutter sticky top-20 z-40 bg-background/80 backdrop-blur-sm py-4">
+<div class="flex flex-wrap gap-2">
+<button class="bg-primary text-on-primary font-label-lg text-label-lg px-4 py-2 border-2 border-on-primary-container sticker-shadow uppercase">All Drops</button>
+<button class="bg-surface-container-high text-on-surface-variant font-label-lg text-label-lg px-4 py-2 border-2 border-outline hover:border-primary transition-colors uppercase">Trucker Hats</button>
+<button class="bg-surface-container-high text-on-surface-variant font-label-lg text-label-lg px-4 py-2 border-2 border-outline hover:border-primary transition-colors uppercase">Vintage Hoodies</button>
+<button class="bg-surface-container-high text-on-surface-variant font-label-lg text-label-lg px-4 py-2 border-2 border-outline hover:border-primary transition-colors uppercase">Graphic Tees</button>
+<button class="bg-surface-container-high text-secondary font-label-lg text-label-lg px-4 py-2 border-2 border-secondary-container hover:bg-secondary hover:text-on-secondary transition-colors uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">bolt</span> Kustom
+                </button>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 border-2 border-outline-variant px-3 py-2 bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-[18px]">sort</span>
+<select class="bg-transparent text-on-surface font-label-lg text-label-lg outline-none focus:ring-0 cursor-pointer">
+<option>LATEST RELEASES</option>
+<option>PRICE: HIGH-LOW</option>
+<option>PRICE: LOW-HIGH</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter">
+<!-- Product 1: Trucker Hat -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A gritty, cinematic shot of a classic black mesh trucker hat with a vibrant orange highway magician logo featuring a piston with wings. The hat is resting on a weathered wooden workbench in a dark, moody automotive garage with subtle teal lens flares and cinematic dust particles in the air." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoL5gFzlUc6Go-xMkbvLIaYp3hT9NmtISNIj6-4qHVsWIAarujbYHnH5dN_TeTlpY_pFANRtVzmn4xOXJAF38L2Axu5S5Q_4wMcLE80VIAxqSK72Foue1TLKs3BR6KTR_rTPZNrH75biuBumB3kgwCwxoJuMJehGvV4nociKqOfFT_9i9lv58v80uCbr_bXKGanMNGzVvEinVhOJDfG4xsgD-6TcGD-VYDsEWcWLe_4KbWNwz2zfodvYpUmAI3U-EocZmbqeeoiAk"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 font-label-lg text-label-lg border-2 border-on-primary uppercase">New Drop</div>
+<div class="absolute bottom-4 right-4 bg-secondary text-on-secondary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-secondary shadow-[3px_3px_0px_0px_black]">Rp 675.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Magician Trucker / V1</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">Premium mesh, foam front, screen-printed logo.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 2: Hoodie -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Close up detail of a vintage-washed charcoal grey heavyweight hoodie. The fabric has a distressed, worn-in texture. A large, cracked-ink orange graphic of a winged piston is centered on the chest. The lighting is harsh and dramatic, mimicking an industrial workshop environment with deep shadows and high-contrast highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ5irU6O5kNwadXJyZA1uWlpA6lMvICSpph9LZEgha7lUucs3mLDEKYJ4-_WmegnUJGCxYAm7yRAGxFqAlHb33j-Y9ncvL59Y5IOxJnSYf25KLUdJa9vdy1n0XGZdkNNsBtInJBQC7qY7VBGwqYL0tAlt5YppNuNHkWr_rXs_HpwkUgSBWRA3l_f0iNoA7C5Y8D2qXC1uMni8ITiciw50pJxvXsUkrLHmh6tEG-LJDxoRGzEY8UAIjmGprpr8sdM4voed5t8fqyrA"/>
+<div class="absolute top-4 left-4 bg-secondary text-on-secondary px-3 py-1 font-label-lg text-label-lg border-2 border-on-secondary uppercase">Best Seller</div>
+<div class="absolute bottom-4 right-4 bg-primary text-on-primary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-primary shadow-[3px_3px_0px_0px_black]">Rp 1.650.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Sun-Faded Garage Hoodie</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">450GSM Heavyweight cotton, vintage wash finish.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 3: Trucker Hat -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A front view of a distressed olive green trucker hat with a white mesh back. A bold black and orange circular patch with a piston design is stitched onto the front. The hat is shot against a textured metal backdrop with hints of rust and industrial rivets, creating a rugged streetwear vibe with teal and orange color grading." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBStvGH54kFY0Xe_Tcf0dkpdAZRo6HmilSFVJRvDhR-xTEBImaC7iSnfCoUBiQHFagnQXJO4kuYB0_yl-qnWLe0HBUquciDTXt_gCl2ZiWPOSvTnjstN1X-8u610Gr_L8cdTKtwV1rQKoDEoB-PIJPba7l7ZpXTBJ3AUMEcdObZ7CKL8Ap7lh40nHTcc43yuf1O3o6ve949wNfXTPzfOpL0pXrdlYP6_DdGHXZ1QBnKJE31WOx_es2tRCBokUokZWr7Wb_Qzv2Hisc"/>
+<div class="absolute bottom-4 right-4 bg-secondary text-on-secondary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-secondary shadow-[3px_3px_0px_0px_black]">Rp 675.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Route 66 Trucker / Olive</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">Adjustable snapback, contrast stitching.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 4: Tee -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A lifestyle shot of a black oversized streetwear t-shirt hanging on a chrome rack. The back of the shirt features a massive, intricate orange and teal graphic of a custom motor engine with magical smoke swirling around it. The environment is a clean, modern concrete urban space with sharp sunlight casting dramatic linear shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCqMmydzSkx5oLySPzSTVtkt72fnClnMigha7wQ-X1Yhuf2FfLxoWbfrfsM230V2HalDnhw7edWJyKoOiU9StiNw8hO2fwu4bGqCUUSh0HZJxHE0imbnrP-P9CIjdU9DF9Xp2eB2Sso7ywtmDU7kQx8LwB5c-S_VC7yKBukJwAu7k_k1Vz6bMAjPkcemMIfkS-gEWZJ2whe0HR9Bg7C6K2LlaMWDcmU_CxbKn-3y80s8P76JxTXOQagTiHqSOfgDPJpwqpcFxTZ5k"/>
+<div class="absolute top-4 left-4 bg-tertiary text-on-tertiary px-3 py-1 font-label-lg text-label-lg border-2 border-on-tertiary uppercase">Ltd Edition</div>
+<div class="absolute bottom-4 right-4 bg-primary text-on-primary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-primary shadow-[3px_3px_0px_0px_black]">Rp 825.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Engine Block Box Tee</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">280GSM Single jersey, puff-print graphics.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 5: Hoodie -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A detailed look at a faded blue vintage-style zip-up hoodie. The metal zipper is chunky and worn. The elbows feature reinforced quilted patches. A small embroidered orange bolt icon is on the wrist. Shot in a high-contrast style with deep blacks and vibrant orange accents in the lighting, capturing a premium garage-built aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmbUKP7fcPcLt4_Tm9N7nEJzMuJmXCNYGbjKrG7Kqe25GLm2vyF6OzUnBceubQ8N9tmZij0IUHNgFqfGLtD8mCGTfYZ9M5EV6j6LBapxotknv8-cEpw98UT4Ixw6Kf2SE_2oP8VVrzLvNBTdbylfmv9DuoghkGYNvpmr0VJGknSIvkEJLy4Xzoz4KcMYewGvMfPqMBKv4_V5NeEsQxDV4rjgNPnRbU_Nu3nQ29EwDNhM47hucbL2ZXM7CPdOgEj4IJZi8kB3tN4lQ"/>
+<div class="absolute bottom-4 right-4 bg-primary text-on-primary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-primary shadow-[3px_3px_0px_0px_black]">Rp 1.875.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Service Station Zip-Up</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">Heavy French Terry, industrial grade zipper.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 6: Accessory -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A close up of a heavy-duty chrome wrench keychain with a small orange leather tag embossed with the Highway Magician logo. The keychain is lying on a greasy shop floor with tools blurred in the background. The color palette is dominated by dark charcoals and hot rod orange, with sharp metallic highlights on the chrome wrench." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDkJ2U48j1axzp8H1uIIzWe8Mfj_td227_--PrgxL_x06ftYx6XTeWuJ52okHiiyQT0i7Mrh_n4_-KNe0fdvckt3CzZb9DbblqZ9myeTEk-gH0894yMv6O8_-qYJXGA-q6W_AJ_hJ5SnJPTohvytChqCnTt0mO1sDvs2YAcb3Mh9BdDUOvVbl2ibb0udhsV2nNEoWMGmbCdV681ZkDtF6BwkA1vXW5JW6Kp37-TdslBNZPAx3vpoGLsIuqn47rzUvDQhtGO-WR5xU"/>
+<div class="absolute bottom-4 right-4 bg-secondary text-on-secondary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-secondary shadow-[3px_3px_0px_0px_black]">Rp 375.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Shop Floor Keychain</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">Cast zinc alloy, genuine leather detailing.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 7: Custom Skull Tee -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img alt="Custom Skull Tee" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpfxKTDQE61AQHLdFRSCMPMOHcqfUa57y35cbzdVRIvrgA0sgkwQTm7SOB29xyq1o8qluV_UAdnwJrVSqx_DNevUdFqKmhcdlDq7UlMHrt7aNT7Q5xhyEZeKxuzdwak8ugNgm3LKs0xXQFIkJ3QwxdJzMtSmLRQgUkcCjzXh1KxbY1EVa438O4m-joCQojWHOJdA49oFr41notZLuircjeHgh1PivjcW1agKR239a3zRpb4YqH57tT1jjX5nG5avFg-LNljizecY8"/>
+<div class="absolute bottom-4 right-4 bg-secondary text-on-secondary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-secondary shadow-[3px_3px_0px_0px_black]">Rp 525.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Custom Skull Tee</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">100% Heavyweight Cotton, screen-printed.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 8: Ride or Die Hoodie -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img alt="Ride or Die Hoodie" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6CAdSbBWZbqZ8BpVF4mdA-r9jWWfJJmO1CwK0lumKSgTkWpkiP9BJ_NxiXwtZVq4N-QUD31kezdy024QJMEz7ttSg1A2FYIuQq0MpTjTpxI4aTx4qBa9CoKXK6BVDEdtzyc9irTFP6Aom80u_YTfMn7K3k1avvnjgbgApZFd5jEZyRU4qBxzlOdkoOif4_uQE-h6M5kaPaEmSTnuqQqzUXtjJGFCEun3uqLDwTUnej5yHvY22WDX1OqVUzRDKA5VuWo2iIP1LJFg"/>
+<div class="absolute bottom-4 right-4 bg-primary text-on-primary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-primary shadow-[3px_3px_0px_0px_black]">Rp 975.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Ride or Die Hoodie</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">Premium fleece, oversized fit.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 9: Piston Graphic Tee -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img alt="Piston Graphic Tee" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcrmjPv59oxRLCt79KV5gm-KvQOcIykFJ2WEASx7hENsS68YDkQJP8WQ-tDpi3AQvyZxl5HNBXo5w-KGc3GeG1DSbjWjYztrEJeP7q14s_dglKkZo35tPO_GhCVgO5FI--jWryjqzUEProFzP9A7noXSp_nVq250gi6LlgoaFFK8KNqqfudp2SXXDcBeqDl61s5M3kblSwzCO8BJrMjO0D38Z1pyc7jl6DDx8rlxGBqmvOuSigP8xMCRBQ0TXNM9MZGgS-mcy6ajk"/>
+<div class="absolute bottom-4 right-4 bg-secondary text-on-secondary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-secondary shadow-[3px_3px_0px_0px_black]">Rp 600.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Piston Graphic Tee</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">Vintage wash, soft-touch print.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 10: Highway Magician Tee -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img alt="Highway Magician Tee" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2QIQrU1CTfAPTK8WEZXY1fPNNTfrHoV1cjyA-R3a9ch9HXhGlxywERKvYG4LI7eHnXVbmGt0T-v5lvJkpF3_ZF7TbKZEctmteGHMEKs4ufdRNwU8tWHywzv_DBM-rJpXe37wdjeuUkYTAGryYaSeTPgug_7FAbHhkxQAadxwBwQAyBIEilSRNQrVAL4k3vDxE5NQ2QZNowtMEPMnq7Q3zoQk89RWDBgOt42fwVOTt1vvSNMAUVLE-Iobij92-CQ0OE_BkAJoT-Kw"/>
+<div class="absolute bottom-4 right-4 bg-primary text-on-primary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-primary shadow-[3px_3px_0px_0px_black]">Rp 570.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Magician Logo Tee</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">Classic fit, durable construction.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 11: Kustom Piston Tee -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img alt="Kustom Piston Tee" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPWgGSdOhzYgb0GuUuHomXPLhcQ-LlxaRn9dKSMXNUJppFS0LGMXtOErbRTs_xCurY7I9LPv_13Z7m7IRpgqFvCw5ocU1wiqRxEDg9OxyYNZU987aLDXIAuBm_G_RDuHpQL86rf0saEb-_PRvkrv2BpmYP01b0pD98yWYoD9YXXkS_XqSqLycQ7iYol994IgBUKEDee6lb6aXUnw8crUGtei9E7jZKPRpcACZxO_0XWdEKsJGNhzZNNBsRihvmPEmZgF3ZD49qkes"/>
+<div class="absolute bottom-4 right-4 bg-secondary text-on-secondary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-secondary shadow-[3px_3px_0px_0px_black]">Rp 630.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Kustom Piston Tee</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">Limited edition garage series.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 12: Speed & Soul Tee -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img alt="Speed &amp; Soul Tee" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf0gR1tI3J_0cbSVQVvjw5UWN_gSZEPQkTSXwqqViBHVG3HYoNVzG5O8zHab_7BFxctcRC7BJcXSKi7U9IG4nB47kWcZzXF3fNjVgMhrTkhG07z0OJ3xWf5FaUtJTIptSmyB6yozoNPw_1QHJkzikgBNJQgw7S3HUUInvkC861q7wZFgeKBvHPQgTviJ1ftYX5gLwm-_xXjLysfLN0RaCbx9BJKDH3HNWrcafpG_M2ZGwL3f-qfvMgdQsl9bYNjWi2XUmxuHstdOA"/>
+<div class="absolute bottom-4 right-4 bg-primary text-on-primary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-primary shadow-[3px_3px_0px_0px_black]">Rp 525.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Speed &amp; Soul Tee</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">100% Organic cotton.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 13: Asphalt Nomad Tee -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img alt="Asphalt Nomad Tee" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_fabBIoGO3R5xLHGCQ1XnV7M_g3Log3dSaqXbSmAVjYDq1b7eDUBYNsRDObWfZ5-0U9Ex6uRSRmU_u12cXQLMC_b30u1OW9esosw--Rnffm89Uu1tu86uKevkOqklHvtG6rwOoh9VoMb6HI2gpytcZcuYkq-H_osU88AtRaonKWHodvVM1i_gSPjMEgu4gdgxXZVTlymp2d-S6uGUTnBoZlGNTQXLjBp9B9gMgb9Med6W7_RuFtzoH-yul5K_S5ch4Clr4u1Aaiw"/>
+<div class="absolute bottom-4 right-4 bg-secondary text-on-secondary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-secondary shadow-[3px_3px_0px_0px_black]">Rp 570.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Asphalt Nomad Tee</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">Built for the long ride.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 14: Garage Built Tee -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img alt="Garage Built Tee" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwBoTuPjrwOOoOIn8iJ_Gvf5OwGOCtT8efVBK93zJ6CYU-FQ7-WL72G7jSEI2LR00rA1Du3xYpu2OWql3D4Bir6hoCuA_OCj0I-lCPQxzSmZyhdF6rPwED3HvInDfxXGngQmOBcD5xCSNT7ZcxnvBDeK5NMIcp3tong1uQ0Yd0gnTHPfkIj4O9fvOpcwhW9-cir4zYsygOtgE1yB_Ntgwx4eppjAs_3rUl6BuvWelXOHq9TY4hLNZVf79VOK8OEcaxRKJlUL6vyrQ"/>
+<div class="absolute bottom-4 right-4 bg-primary text-on-primary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-primary shadow-[3px_3px_0px_0px_black]">Rp 600.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Garage Built Tee</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">Heavyweight jersey, relaxed fit.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 15: Racing Spirit Tee -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img alt="Racing Spirit Tee" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBKwnvOyJTYIgEy0wQ-suZcn4zz6hJn8U-v5BQU0LqenRp4O9BK7iY-f1HfsBdQMpZ5ofJmJGRMbnrCAfNHe_d6Vf5mHO9qKtEp_ZAYrMmwnxvZHsBYen8wkqt7VDoCDLSiKhXjRqEErBC6xHyyfUJ33OJZ2VJxR1gwiMWmkRDIA0EbctUCMGVpiy9nCCnPF6Mwd6ibZhxXOOQjLGbrB49ejN-8zLHtBj2d1VclVsAaZFAnfMvrpIgqkbkItEtb5euR3hsms_2MkQ"/>
+<div class="absolute bottom-4 right-4 bg-secondary text-on-secondary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-secondary shadow-[3px_3px_0px_0px_black]">Rp 525.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Racing Spirit Tee</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">High-octane graphics.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 16: Vintage Moto Tee -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img alt="Vintage Moto Tee" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwt-nSUUrw0Zgms8H7Or0UYrrXVy-mXPDX72Xnwmab1fEjcVx5_A41ntYenwMyRchJllDLbmYUyv125avScFe7-bb7Pyar6tAWGWZJHYGyG1lE2AVkFOpzHSvpBPit5m9XHF39wWtPpLwHOTlvD8s_5ifT21cq85L9lWrXPQxHU7pkeQPXDy7sqOtvbbPB296uxtsiPr-tqMEwgAv1lTkun1nrB9v6lhEbVUJ3GsjpfUu5_AnK825IE_1IbL3VqinuPrJXbOS3muo"/>
+<div class="absolute bottom-4 right-4 bg-primary text-on-primary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-primary shadow-[3px_3px_0px_0px_black]">Rp 675.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Vintage Moto Tee</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">Distressed print, premium cotton.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 17: Iron Horse Tee -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img alt="Iron Horse Tee" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVkOD3A5v0L3DomPFdEQUsro9fuiU5F0Gw8V9N7Vwb5eiO0R3p3CSBajlHXXXH5f7BZXflXFXzlITmXl3TawTas_9s9edwL5M1yhVCye9UKv0C3wUkwoVDovJLwhYA-uhSN9tztcr5u7Gk6LrBaOIKeyjtm6ucamO3qHY0fEDHCEIgZoVzty5RdKeTGRSWZ0ZKCEE_VncMC5caGg2bSPOpaiS9q0bN8ta4NprHRefZtoegxgN1Ili__W1v0rcySoMjDGWGsWo7s7E"/>
+<div class="absolute bottom-4 right-4 bg-secondary text-on-secondary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-secondary shadow-[3px_3px_0px_0px_black]">Rp 570.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Iron Horse Tee</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">Rugged streetwear essential.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 18: Skull & Bones Tee -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img alt="Skull &amp; Bones Tee" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt9buCsa3d_3C2L9UcgfAlFN0DCwrvYMJk9zkKuNgR3cZ7c6o-A3xmUubvHyEl6odVLh09SERGOZXvnlyYHtBgcF1OL_qEjsJzWJL9HDpANqEXOPskAhbIuhjzFrCkrMwfRVXa68VEC4XwYrNedXF_kiAnDa5Y6aArtRtQpZS2d8jlLoOhecTRiFF16jxh74yB4rIS3Oc3vcEN7oPL75o2MMT2k2hltquEyLyHbl7LQSlpyDvXH4RMPhYmUBpx7wWBmyF1Fe0woug"/>
+<div class="absolute bottom-4 right-4 bg-primary text-on-primary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-primary shadow-[3px_3px_0px_0px_black]">Rp 630.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-1 uppercase">Skull &amp; Bones Tee</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">Bold graphic, soft-wash finish.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 19: Midnight Rider Tee -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img alt="Midnight Rider Tee" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZEm6BcNm0Xma16Lo2Yaxb6S9MpHE71FnU_UmrGzXfVofgwdB8PBr6vAq3bY_5seAUtnCEjOYasaQJdaTz1AFOLWf37d0pbT2U_pd2nnemVlp4eRQf7zcAsdb-hgbaORCUoV3WnKmg61NmgK4xZkuw2vSFDSZrirglReLAlHChUC3V8qBGS8Bd1Wdq7-gZBw7ie1FFpX-cJkPAReEhw-QhLqZt71ewZVTBAzWn0B8GPHEqr9l1awjnJOMWhcnoz15jF62np4zMd1o"/>
+<div class="absolute bottom-4 right-4 bg-secondary text-on-secondary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-secondary shadow-[3px_3px_0px_0px_black]">Rp 600.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Midnight Rider Tee</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">Stealth black, premium print.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 20: Bolt Graphic Tee -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img alt="Bolt Graphic Tee" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbmchZy91NSRmk9KVUDb8kU5LQS8mSsXUZ_GddQ8WfDmg2kGa0pVvMPy8inLb-TyCAES5fUsNfU8fYlzuQKxEiZaI-wp9jpN5Gy64OfYHhtzDkIbXZS5tkFAC5FaarzZ1uDqDPv7Is7u_fWSWWNS7x029UzUkKopnsS3vlAoNEBseX-0GYMsxn5_HLpo0ofIAYXBATx4u8blmx8bcpKLEF6ASPGX08WvBAKjrow62yE1UkUEb6e1KQ5WR7yWJ7ZiCIyWRb53VX2sg"/>
+<div class="absolute bottom-4 right-4 bg-primary text-on-primary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-primary shadow-[3px_3px_0px_0px_black]">Rp 525.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Bolt Graphic Tee</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">Electric style for the street.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 21: Piston Head Tee -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img alt="Piston Head Tee" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK6V7uwD6Xj-ZRLferqQH38W6VgiW8fvhZTC0bK1-3Zf4Fl9pgHFibJx3Yec7y8owXxImpv3kWWwoH5jYyLbCoWS9raB9Y1cgeCUfpmoyouHGZVEuBOuC1H84MeDi9tQVnBWdMDCTOKcDKiVcRwSosjl4Zbd6I23-MIe2L9n5fygQ_DQ0fB-Fg4pc5D0GmyMWp_dMuCk3nvkDdEvhA9eHxbrcCLoK6PX5ilyamKkuCEJLuaO0OK9-89KJrs2mCIoxgb47xVyisf2o"/>
+<div class="absolute bottom-4 right-4 bg-secondary text-on-secondary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-secondary shadow-[3px_3px_0px_0px_black]">Rp 570.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Piston Head Tee</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">Garage-inspired aesthetics.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div>
+<!-- Product 22: Highway Magician V2 -->
+<div class="group flex flex-col bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 relative overflow-hidden">
+<div class="relative aspect-square overflow-hidden bg-surface-container-lowest">
+<img alt="Highway Magician V2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFZxvWZqwXeCrUcP9plXsSHjmwuzhp4o0hiJHc8a8RVOimtrxjrFbE-7HFiRcCsMGg8K_FbmSjwk4AdLi5syxWblQ83mFUJRfCDl56_SSISHDWbUelMquqKt3EmDPUNLM-KkmL2I-uFPu_Fs0z46Pg7nm21d0cn-IjWeoXNO8vlMXpXfFj_I5o8YhEZUpyXTBbRkzsHbC7Rh14hMW2MuIH-i5_8hQFGMKBZ0O3D9vj6P_hcS0AfrYTIJzxnEl1mS_intnDVObJLwk"/>
+<div class="absolute bottom-4 right-4 bg-primary text-on-primary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-primary shadow-[3px_3px_0px_0px_black]">Rp 675.000</div>
+</div>
+<div class="p-4 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors uppercase">Magician V2 Tee</h3>
+<p class="font-body-md text-on-surface-variant font-light mt-1">The next evolution of the classic.</p>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-3 border-2 border-on-primary active:scale-95 transition-all sticker-shadow uppercase">Quick Add</button>
+</div>
+</div></div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 border-t-2 border-outline-variant flex justify-around items-center h-20 px-margin-mobile pb-safe bg-surface-container-low">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary active:scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-lg text-label-lg">HOME</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-4 py-1 active:scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-label-lg text-label-lg">SHOP</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary active:scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-lg text-label-lg">SEARCH</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary active:scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-lg text-label-lg">PROFILE</span>
+</button>
+</nav>
+<!-- Footer (Desktop Only) -->
+<footer class="hidden md:block bg-surface-container-lowest py-stack-xl px-margin-desktop border-t-4 border-primary">
+<div class="grid grid-cols-4 gap-gutter">
+<div class="col-span-2">
+<h2 class="font-display-md text-display-md text-primary mb-4">HWY MAGICIAN</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-sm">Born in the garage, raised on the street. High-velocity goods for the modern nomad.</p>
+<div class="flex gap-4 mt-8">
+<div class="w-10 h-10 border-2 border-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined">alternate_email</span>
+</div>
+<div class="w-10 h-10 border-2 border-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined">photo_camera</span>
+</div>
+<div class="w-10 h-10 border-2 border-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+</div>
+</div>
+<div>
+<h4 class="font-headline-lg text-headline-lg text-on-surface mb-6">NAVIGATE</h4>
+<ul class="flex flex-col gap-3">
+<li class=""><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="#">ALL COLLECTIONS</a></li>
+<li class=""><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="#">KUSTOM SERVICE</a></li>
+<li class=""><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="#">SIZE GUIDE</a></li>
+<li class=""><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="#">RACING TEAM</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-lg text-headline-lg text-on-surface mb-6">INFO</h4>
+<ul class="flex flex-col gap-3">
+<li class=""><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="#">SHIPPING POLICY</a></li>
+<li class=""><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="#">RETURNS</a></li>
+<li class=""><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="#">PRIVACY</a></li>
+<li class=""><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="#">TERMS</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-stack-xl pt-stack-md border-t-2 border-outline-variant flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">© 2024 HIGHWAY MAGICIAN. ALL RIGHTS RESERVED.</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-[0.2em]">Built for the fast lane.</span>
+</div>
+</footer>
+<script>
+        // Micro-interactions for buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => {
+                btn.style.transform = 'scale(0.98)';
+            });
+            btn.addEventListener('mouseup', () => {
+                btn.style.transform = 'scale(1)';
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'scale(1)';
+            });
+        });
+
+        // Quick add notification simulation
+        document.querySelectorAll('button:contains("Quick Add")').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const toast = document.createElement('div');
+                toast.className = 'fixed top-24 right-8 bg-secondary text-on-secondary px-6 py-4 border-4 border-black font-headline-lg text-headline-lg z-[100] animate-bounce';
+                toast.innerText = 'ITEM ADDED TO CART';
+                document.body.appendChild(toast);
+                setTimeout(() => toast.remove(), 3000);
+            });
+        });
+    </script>
+</body></html>

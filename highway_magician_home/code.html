@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HWY MAGICIAN | Custom Culture Streetwear</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-primary-fixed-variant": "#852400",
+                "surface-container": "#201f1f",
+                "inverse-primary": "#ad3200",
+                "on-tertiary": "#2f3131",
+                "outline": "#ac897e",
+                "surface-container-low": "#1c1b1b",
+                "on-error": "#690005",
+                "primary-fixed-dim": "#ffb59e",
+                "surface-bright": "#393939",
+                "on-surface-variant": "#e6beb2",
+                "primary": "#ffb59e",
+                "surface-container-highest": "#353534",
+                "background": "#131313",
+                "error": "#ffb4ab",
+                "outline-variant": "#5c4037",
+                "on-background": "#e5e2e1",
+                "on-tertiary-fixed-variant": "#454747",
+                "surface-container-lowest": "#0e0e0e",
+                "tertiary": "#c6c6c6",
+                "surface-tint": "#ffb59e",
+                "on-secondary-fixed-variant": "#004f51",
+                "surface-variant": "#353534",
+                "on-primary-fixed": "#3a0b00",
+                "primary-container": "#ff5719",
+                "on-secondary-fixed": "#002020",
+                "tertiary-fixed": "#e2e2e2",
+                "secondary": "#46eaed",
+                "secondary-fixed-dim": "#2ddbde",
+                "on-primary-container": "#521300",
+                "tertiary-container": "#909191",
+                "on-error-container": "#ffdad6",
+                "surface-container-high": "#2a2a2a",
+                "on-secondary-container": "#005253",
+                "on-surface": "#e5e2e1",
+                "tertiary-fixed-dim": "#c6c6c6",
+                "on-secondary": "#003738",
+                "on-tertiary-fixed": "#1a1c1c",
+                "error-container": "#93000a",
+                "on-tertiary-container": "#282a2a",
+                "on-primary": "#5e1700",
+                "inverse-on-surface": "#313030",
+                "secondary-fixed": "#5af8fb",
+                "inverse-surface": "#e5e2e1",
+                "primary-fixed": "#ffdbd0",
+                "surface": "#131313",
+                "secondary-container": "#00cdd0",
+                "surface-dim": "#131313"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "stack-lg": "32px",
+                "stack-xl": "64px",
+                "margin-mobile": "24px",
+                "margin-desktop": "64px",
+                "gutter": "24px",
+                "stack-sm": "8px",
+                "unit": "8px",
+                "stack-md": "16px"
+            },
+            "fontFamily": {
+                "headline-lg": ["Bebas Neue"],
+                "body-lg": ["Space Grotesk"],
+                "label-lg": ["Space Grotesk"],
+                "body-md": ["Space Grotesk"],
+                "headline-lg-mobile": ["Bebas Neue"],
+                "display-md": ["Bebas Neue"],
+                "label-sm": ["Space Grotesk"],
+                "display-lg": ["Bebas Neue"]
+            },
+            "fontSize": {
+                "headline-lg": ["32px", {"lineHeight": "32px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "label-lg": ["14px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "headline-lg-mobile": ["28px", {"lineHeight": "28px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                "display-md": ["48px", {"lineHeight": "44px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "14px", "fontWeight": "500"}],
+                "display-lg": ["80px", {"lineHeight": "72px", "letterSpacing": "0.02em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Space Grotesk', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .sticker-effect {
+            box-shadow: 4px 4px 0px 0px rgba(255,181,158,1);
+            transition: all 0.1s ease-in-out;
+        }
+        
+        .sticker-effect:active {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0px 0px rgba(255,181,158,1);
+        }
+
+        .grain-texture {
+            position: relative;
+        }
+        .grain-texture::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .scroller-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scroller-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            display: flex;
+        }
+        .marquee-content {
+            display: flex;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-background border-b-2 border-outline-variant shadow-[4px_4px_0px_0px_rgba(255,181,158,1)] flex justify-between items-center px-margin-mobile py-stack-md">
+<div class="flex items-center gap-4">
+<button class="active:translate-y-0.5 active:shadow-none transition-all">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile tracking-tighter text-on-background uppercase">HighWaY MAGICIAN</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="active:translate-y-0.5 active:shadow-none transition-all">
+<span class="material-symbols-outlined text-primary">shopping_cart</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-24 px-0">
+<!-- Hero Section -->
+<section class="relative px-margin-mobile mb-stack-xl">
+<div class="relative overflow-hidden border-2 border-on-background sticker-effect bg-surface-container-low rounded-lg aspect-[4/5] flex flex-col items-center justify-center p-stack-lg" style="transform: translate(0px, 0px); box-shadow: rgb(255, 181, 158) 4px 4px 0px 0px;">
+<div class="absolute inset-0 z-0 opacity-20">
+<div class="w-full h-full bg-gradient-to-tr from-primary/30 to-transparent"></div>
+</div>
+<img alt="Highway Magician Logo" class="w-full max-w-[280px] z-10 drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDdJSoBZlbFljHb9vDxalwf_U3hS1Vjuq2dVC2Xcxwy95QfmPxp6gYoNF3qjyNGxV-1ZvfdezCLG1OT0EGd4DHP-ZoOWmAML4GaoxP0fgQEU6g993O6kS2PtD_UAXkSzjRP8fdzARuBG4NQzB8H_hEu845F_xDOyDMppx-3CclG9W20ufWCNitqcr8NDpOlpO4D_77t8eYIJIwG9Yt3WJh0t80D-9e9cz_Dwktkji9RTsepkcGaDb1RwDfidJIAiTIcXu_fYaPqCs"/>
+<div class="mt-stack-lg text-center z-10">
+<span class="inline-block bg-primary text-on-primary font-label-lg px-stack-sm py-1 mb-stack-sm">EST. 2004</span>
+<h2 class="font-display-md text-display-md leading-tight tracking-tighter uppercase italic">CUSTOM BUILT<br/>REBELLION</h2>
+</div>
+</div>
+</section>
+<!-- New Drop Announcement Marquee -->
+<div class="bg-secondary text-on-secondary py-stack-sm border-y-2 border-on-background mb-stack-xl rotate-[-1deg] scale-105">
+<div class="marquee">
+<div class="marquee-content font-label-lg uppercase tracking-widest flex gap-12 py-2">
+<span class="">NEW DROP: NITRO-BURST COLLECTION NOW LIVE • </span>
+<span class="">NEW DROP: NITRO-BURST COLLECTION NOW LIVE • </span>
+<span class="">NEW DROP: NITRO-BURST COLLECTION NOW LIVE • </span>
+<span class="">NEW DROP: NITRO-BURST COLLECTION NOW LIVE • </span>
+</div>
+</div>
+</div>
+<!-- Featured Collections (Bento Style) -->
+<section class="px-margin-mobile mb-stack-xl">
+<div class="flex justify-between items-end mb-stack-md">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile uppercase underline decoration-primary decoration-4 underline-offset-4">FEATURED COLLECTIONS</h3>
+<span class="font-label-sm text-primary uppercase">View All</span>
+</div>
+<div class="grid grid-cols-2 gap-stack-sm">
+<!-- Large Tile -->
+<div class="col-span-2 relative h-64 border-2 border-on-background sticker-effect overflow-hidden rounded-lg">
+<div class="absolute inset-0 bg-cover bg-center group" data-alt="Close-up of a premium distressed black denim jacket with high-quality patches of engine parts and wings. The lighting is cinematic with orange and teal neon glows reflecting off the fabric. The overall style is edgy, brutalist, and modern custom car culture streetwear." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDgZngrJbbOAa048ksCZtJyVRA9xrUHiaZzD3uwuRoMEMrK1U2k5eFG8XwEoR1UChv7p64EK58fn3PZU20d1-c3P49TiPN9fhMkXLdMxBv1x6CRO58LWBYtitt1tWHEs5PYCB0TX5NTa0nXEVZA0-FkktgRRkIZBEIuJ809TQIM1AzngdvuQXT9xBKkkCSNzfByvJjBaQCPdnyhOfVnqzdbcMBn58rBLAUonlzTrg4A-aYLHIpXh8faLxaZVTuMJFwU2F5YJmCn_pA')">
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-80"></div>
+</div>
+<div class="absolute bottom-4 left-4">
+<h4 class="font-headline-lg text-headline-lg uppercase text-on-background">GRAPHIC TEES</h4>
+<p class="font-label-sm text-primary-fixed-dim uppercase">Hand-drawn Mechanics</p>
+</div>
+</div>
+<!-- Small Tile 1 -->
+<div class="col-span-1 relative h-48 border-2 border-on-background sticker-effect overflow-hidden rounded-lg">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A row of high-quality vintage style trucker hats with embroidered engine pistons and eye logos. Sharp focus on the texture of the mesh and the stitching of the logos. Deep charcoal and orange color palette with a gritty garage workshop background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDxqPw41_zHm9vaUj6L7l2QAALUVdeLS6I_SnBb2mMQ2xSIJbcFCpm8CVvMZXtqNlFs7JF9ookD6y8XxhrpgvrwJbQC4G-byHLCpXhE2CYC3olLL6eTVqImOl89CHMrUYrXQbdmIDbpiLCAAg05oaNId6Zka-6dD8TIb_YjcA89MDwhfYS-6layuqeYZ3t75jUIYNN5FCs8gxoOO2VdH-r_uqVShBoU1Y4bSbUF8uR21xe6bmjZIXSoRJOQyJrq8JJsCo4kCDnOIOI')">
+</div>
+<div class="absolute inset-0 bg-background/30"></div>
+<div class="absolute bottom-3 left-3">
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile uppercase text-on-background">HATS</h4>
+</div>
+</div>
+<!-- Small Tile 2 -->
+<div class="col-span-1 relative h-48 border-2 border-on-background sticker-effect overflow-hidden rounded-lg">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A collection of custom streetwear hoodies hanging in a dark, atmospheric industrial warehouse. The hoodies feature bold, high-contrast typography and large graphic prints of custom cars. The lighting is dramatic and low-key with teal highlights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3REe4ittWnUEFZ5NboLLEenuETtXTb4MjP9IBIBaWAvqL6RtaI_01r4A2Y-LMt7w_Jzmr7i3MPhFkRFSqbO8sWM1lTxzddoDlpPWCmek50ZTvJla0WJ1Pr3JIw3gGzh7PzHGntgbEFpBlDzOrQN9YQfHfAAJYY8gawkvhemnEZaWBKBGAXaCfiZ1USciKBigdpWokh-ZRPfYUdkbGkKsJDm6OyjF5-tOTLC9-eIrdiQi63y6pYdJFxjFKWvAx_n-rp8LIR2NBzGg')">
+</div>
+<div class="absolute inset-0 bg-background/30"></div>
+<div class="absolute bottom-3 left-3">
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile uppercase text-on-background">OUTERWEAR</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Now Scroller -->
+<section class="mb-stack-xl">
+<div class="px-margin-mobile flex justify-between items-center mb-stack-md">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile uppercase">TRENDING NOW</h3>
+<div class="flex gap-2">
+<span class="w-2 h-2 bg-primary rounded-full"></span>
+<span class="w-2 h-2 bg-outline-variant rounded-full"></span>
+</div>
+</div>
+<div class="flex overflow-x-auto scroller-hide gap-stack-md px-margin-mobile pb-stack-md">
+<!-- Product Card 1 -->
+<div class="min-w-[200px] flex-shrink-0 group">
+<div class="relative w-full aspect-square border-2 border-on-background overflow-hidden sticker-effect mb-stack-sm rounded-lg">
+<img class="w-full h-full object-cover" data-alt="A premium heavy cotton black t-shirt laid flat, featuring a large orange graphic of a winged piston with an eye in the center. The design is bold and industrial, influenced by 2000s streetwear and custom car culture. Studio lighting on a textured concrete surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCme_HmI9bf2g55G6OF6GWhVRo-rw1BOUpxAQRPKIkC2jJyjTWWElkFND09g0J9Joxl3LHf53dZbjDNcfvYUONpH9EQ2EL1KJ1rGxiyOZnkU78Xv0LfUwxJBQ4WQMSt31NldVvaZjTvRZ-rtG00XlV5oCYSdqXpAhatnvkkbpCOpiofmaboegW6saSJ-J1Z9k0c6oGGNMwxIi0Iwj6jzUJVSxxoXlY9DQPPDzsnmC7jtAHSDGEUGSDXDIr5njHo66XBcxAlHfgg4VQ"/>
+<div class="absolute top-2 right-2">
+<span class="bg-secondary text-on-secondary font-label-sm px-2 py-1 uppercase">Sold Out</span>
+</div>
+</div>
+<h5 class="font-label-lg text-on-background uppercase truncate">PISTON PROPHECY TEE</h5>
+<p class="font-body-md text-primary">Rp 675.000</p>
+</div>
+<!-- Product Card 2 -->
+<div class="min-w-[200px] flex-shrink-0 group">
+<div class="relative w-full aspect-square border-2 border-on-background overflow-hidden sticker-effect mb-stack-sm rounded-lg">
+<img class="w-full h-full object-cover" data-alt="A detailed shot of a distressed trucker hat with a teal mesh back and a black front panel. The front features a high-density embroidery of the words 'HWY MAGICIAN' in a bold, brush-style script font. The setting is a mechanic's toolbox with tools scattered around." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3C1sjE75sLujNsvV4kDxERPySYzsr7pceIiFn4lp2tqOxcXby9FlX08eCHUTJBJt4ARsuh939g2mx3SbnVL5igiKDoT2g9H7-Ad-0eBnVaXYfuHrWNd158C8FSl_VD8OsHPmM0Zvuihx9Ymidkk2p8pXH-parn6HlYDTAELEtr8NHp07n0TDqk89jZC-6CzaJgSLpnGP3IxGpY_IJxOUPL9BhA4v1yO8lSTCSUt4MyH4StfVwBLa0NsTHDTi8VvNqP8FfrWqCwx8"/>
+</div>
+<h5 class="font-label-lg text-on-background uppercase truncate">VINTAGE TRUCKER - TEAL</h5>
+<p class="font-body-md text-primary">Rp 480.000</p>
+</div>
+<!-- Product Card 3 -->
+<div class="min-w-[200px] flex-shrink-0 group">
+<div class="relative w-full aspect-square border-2 border-on-background overflow-hidden sticker-effect mb-stack-sm rounded-lg">
+<img class="w-full h-full object-cover" data-alt="A stylish black hoodie featuring an oversized white and orange print on the back of a vintage hot rod engine with flames. The style is aggressive and high-contrast, fitting the 'garage-built' aesthetic. Professional product photography with a shallow depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcDE9rUCf16e6bqu9V5NUZi3RzsA1SocgAzeUZbBDtrLQU39cpHH1g5JCos4A_dr2sUkVc3SQE446MEI9SjEuG890nNfZuIScu5-3fLfDC8CgHsqpV9ICBUhEZkd0SwGnD_Ve-snfTgvW_b0Om-l_us0I6bwFQ39Gx0W7ru8kwifd_jpB22Oc6v4B4fJKjCVkdCn5GK0OTd9Ahl52eLW7qpcMejJBL0w7tIJhF0_awMA58h3W9YUNfY--a3llV1Z229WWxhzEOy3U"/>
+<div class="absolute top-2 right-2">
+<span class="bg-primary text-on-primary font-label-sm px-2 py-1 uppercase">Limited</span>
+</div>
+</div>
+<h5 class="font-label-lg text-on-background uppercase truncate">FUEL INJECTED HOODIE</h5>
+<p class="font-body-md text-primary">Rp 1.275.000</p>
+</div>
+</div>
+</section>
+<!-- Newsletter CTA / Zine Style -->
+<section class="px-margin-mobile mb-stack-xl">
+<div class="border-2 border-on-background p-stack-lg rounded-lg bg-surface-container relative overflow-hidden">
+<div class="absolute top-0 right-0 opacity-10">
+<span class="material-symbols-outlined text-[120px] rotate-12">settings_input_component</span>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile uppercase mb-stack-sm text-primary">THE GARAGE ETHOS</h3>
+<p class="font-body-md text-on-background leading-relaxed mb-stack-md">
+      Born in the grease and grit of a 2004 backyard workshop, HWY MAGICIAN isn't just apparel—it's a tribute to the grease monkeys, the midnight drifters, and the custom-built rebels who find magic in the machine.
+    </p>
+<div class="flex items-center gap-2">
+<div class="h-[2px] flex-grow bg-outline-variant"></div>
+<span class="font-label-lg text-primary italic">SINCE '04</span>
+<div class="h-[2px] flex-grow bg-outline-variant"></div>
+</div>
+</div>
+</section><section class="px-margin-mobile mb-stack-xl">
+<div class="bg-on-primary-fixed text-primary-fixed border-2 border-primary sticker-effect p-stack-lg rounded-lg grain-texture overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-display-md text-display-md leading-none mb-stack-sm italic">JOIN THE<br/>CONVOY</h3>
+<p class="font-body-md text-on-surface-variant mb-stack-md">Drop your email to get early access to limited garage-built releases and exclusive zines.</p>
+<div class="flex flex-col gap-3">
+<input class="bg-background border-2 border-primary text-primary font-body-md px-stack-md py-stack-sm rounded-lg focus:ring-0 focus:border-secondary outline-none placeholder:text-outline-variant" placeholder="EMAIL@GARAGE.COM" type="email"/>
+<button class="bg-primary text-on-primary font-headline-lg-mobile py-stack-sm border-2 border-on-primary-fixed active:scale-95 transition-transform uppercase tracking-widest">SUBSCRIBE</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container-low border-t-2 border-outline-variant flex justify-around items-center h-20 px-margin-mobile pb-safe">
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-4 py-1 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm uppercase">HOME</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-label-sm uppercase">SHOP</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-sm uppercase">SEARCH</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm uppercase">PROFILE</span>
+</a>
+</nav>
+<!-- Floating Action Button (SUPPRESSED as per navigation logic for home feed focus, but added for "Shop" quick-action context if needed) -->
+<!-- Determined FAB suppression: Primary purpose of this screen is browsing 'Home' ecosystem, so no floating shop action to avoid cluttering bento layout. -->
+<script>
+        // Micro-interactions for hard-shadow shift
+        document.querySelectorAll('.sticker-effect').forEach(card => {
+            card.addEventListener('mousedown', () => {
+                card.style.transform = 'translate(2px, 2px)';
+                card.style.boxShadow = '1px 1px 0px 0px rgba(255,181,158,1)';
+            });
+            card.addEventListener('mouseup', () => {
+                card.style.transform = 'translate(0px, 0px)';
+                card.style.boxShadow = '4px 4px 0px 0px rgba(255,181,158,1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translate(0px, 0px)';
+                card.style.boxShadow = '4px 4px 0px 0px rgba(255,181,158,1)';
+            });
+        });
+    </script>
+</body></html>
