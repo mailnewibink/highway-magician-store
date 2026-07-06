@@ -227,7 +227,7 @@ function ShopList() {
                       </div>
                     )}
                     
-                    <div className="absolute bottom-4 right-4 z-10 bg-primary text-on-primary px-3 py-2 font-headline-lg text-headline-lg border-2 border-on-primary shadow-[3px_3px_0px_0px_black] group-hover:translate-x-0.5 group-hover:translate-y-0.5 group-hover:shadow-[1px_1px_0px_0px_black] transition-all rounded-sm">
+                    <div className="absolute bottom-4 right-4 z-10 bg-primary text-on-primary px-3 py-2 font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg border-2 border-on-primary shadow-[3px_3px_0px_0px_black] group-hover:translate-x-0.5 group-hover:translate-y-0.5 group-hover:shadow-[1px_1px_0px_0px_black] transition-all rounded-sm whitespace-nowrap">
                       Rp {product.price.toLocaleString('id-ID')}
                     </div>
                   </div>

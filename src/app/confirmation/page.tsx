@@ -116,7 +116,7 @@ function ConfirmationDetails() {
         {total > 0 && (
           <div className="flex justify-between">
             <span className="text-on-surface-variant uppercase">TOTAL VALUE</span>
-            <span className="font-bold text-primary">Rp {total.toLocaleString('id-ID')}</span>
+            <span className="font-bold text-primary whitespace-nowrap">Rp {total.toLocaleString('id-ID')}</span>
           </div>
         )}
       </div>

@@ -137,7 +137,7 @@ export default function Cart() {
                           <span className="material-symbols-outlined text-[18px]">add</span>
                         </button>
                       </div>
-                      <p className="font-headline-lg text-headline-lg text-on-background">
+                      <p className="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-background whitespace-nowrap">
                         Rp {productTotal.toLocaleString('id-ID')}
                       </p>
                     </div>
@@ -157,15 +157,15 @@ export default function Cart() {
             
             {/* Price spec sheet */}
             <div className="flex flex-col gap-4 font-body-md">
-              <div className="flex justify-between">
+              <div className="flex justify-between gap-4">
                 <span className="text-on-surface-variant uppercase text-sm">SUBTOTAL</span>
-                <span className="font-bold">Rp {subtotal.toLocaleString('id-ID')}</span>
+                <span className="font-bold whitespace-nowrap">Rp {subtotal.toLocaleString('id-ID')}</span>
               </div>
 
               {appliedPromo && (
-                <div className="flex justify-between text-secondary">
+                <div className="flex justify-between gap-4 text-secondary">
                   <span className="uppercase text-sm">DISCOUNT ({appliedPromo} -10%)</span>
-                  <span className="font-bold">-Rp {discountAmount.toLocaleString('id-ID')}</span>
+                  <span className="font-bold whitespace-nowrap">-Rp {discountAmount.toLocaleString('id-ID')}</span>
                 </div>
               )}
 
@@ -174,14 +174,14 @@ export default function Cart() {
                 <span className="font-bold text-secondary">GRATIS</span>
               </div>
               
-              <div className="flex justify-between">
+              <div className="flex justify-between gap-4">
                 <span className="text-on-surface-variant uppercase text-sm">EST. TAX (8%)</span>
-                <span className="font-bold">Rp {calculatedTax.toLocaleString('id-ID')}</span>
+                <span className="font-bold whitespace-nowrap">Rp {calculatedTax.toLocaleString('id-ID')}</span>
               </div>
 
-              <div className="border-t-2 border-outline-variant pt-4 flex justify-between items-baseline mt-2">
+              <div className="border-t-2 border-outline-variant pt-4 flex justify-between items-baseline mt-2 gap-4">
                 <span className="font-headline-lg text-headline-lg uppercase">TOTAL</span>
-                <span className="font-display-md text-display-md text-primary">
+                <span className="font-display-md text-display-md text-primary whitespace-nowrap">
                   Rp {grandTotal.toLocaleString('id-ID')}
                 </span>
               </div>
