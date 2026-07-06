@@ -42,7 +42,7 @@ export default function Home() {
             <img
               alt="Highway Magician Logo"
               className="w-full max-w-[280px] sm:max-w-[340px] z-10 drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform duration-300"
-              src="/hwy-magician-logo.png"
+              src="/hwy-magician-logo.jpg"
             />
             
             <div className="mt-stack-lg text-center z-10">
