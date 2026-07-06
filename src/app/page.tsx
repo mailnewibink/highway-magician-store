@@ -30,7 +30,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative mb-stack-xl">
         <Link href="/shop" className="block group">
-          <div className="relative overflow-hidden border-2 border-on-background sticker-effect bg-surface-container-low rounded-lg aspect-[4/5] sm:aspect-[16/9] flex flex-col items-center justify-center p-stack-lg cursor-pointer">
+          <div className="relative overflow-hidden border-2 border-on-background sticker-effect bg-surface-container-low rounded-lg min-h-[380px] sm:min-h-0 sm:aspect-[16/9] flex flex-col items-center justify-center p-stack-lg cursor-pointer">
             <div className="absolute inset-0 z-0 opacity-20 group-hover:opacity-35 transition-opacity duration-300">
               <div className="w-full h-full bg-gradient-to-tr from-primary/40 to-transparent"></div>
             </div>
@@ -61,13 +61,15 @@ export default function Home() {
       </section>
 
       {/* New Drop Announcement Marquee */}
-      <div className="bg-secondary text-on-secondary py-stack-sm border-y-2 border-on-background mb-stack-xl rotate-[-1deg] scale-105 relative z-10">
-        <div className="marquee">
-          <div className="marquee-content font-label-lg uppercase tracking-widest flex gap-12 py-2">
-            <span>NEW DROP: NITRO-BURST COLLECTION NOW LIVE • </span>
-            <span>NEW DROP: NITRO-BURST COLLECTION NOW LIVE • </span>
-            <span>NEW DROP: NITRO-BURST COLLECTION NOW LIVE • </span>
-            <span>NEW DROP: NITRO-BURST COLLECTION NOW LIVE • </span>
+      <div className="overflow-hidden w-full mb-stack-xl">
+        <div className="bg-secondary text-on-secondary py-stack-sm border-y-2 border-on-background rotate-[-1deg] scale-105 relative z-10">
+          <div className="marquee">
+            <div className="marquee-content font-label-lg uppercase tracking-widest flex gap-12 py-2">
+              <span>NEW DROP: NITRO-BURST COLLECTION NOW LIVE • </span>
+              <span>NEW DROP: NITRO-BURST COLLECTION NOW LIVE • </span>
+              <span>NEW DROP: NITRO-BURST COLLECTION NOW LIVE • </span>
+              <span>NEW DROP: NITRO-BURST COLLECTION NOW LIVE • </span>
+            </div>
           </div>
         </div>
       </div>

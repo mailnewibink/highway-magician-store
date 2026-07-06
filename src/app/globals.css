@@ -120,7 +120,7 @@
   font-weight: 500;
 }
 
-body {
+html, body {
   background-color: #131313;
   color: #e5e2e1;
   font-family: 'Space Grotesk', sans-serif;
