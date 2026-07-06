@@ -42,7 +42,7 @@ export default function Home() {
             <img
               alt="Highway Magician Logo"
               className="w-full max-w-[280px] sm:max-w-[340px] z-10 drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform duration-300"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDdJSoBZlbFljHb9vDxalwf_U3hS1Vjuq2dVC2Xcxwy95QfmPxp6gYoNF3qjyNGxV-1ZvfdezCLG1OT0EGd4DHP-ZoOWmAML4GaoxP0fgQEU6g993O6kS2PtD_UAXkSzjRP8fdzARuBG4NQzB8H_hEu845F_xDOyDMppx-3CclG9W20ufWCNitqcr8NDpOlpO4D_77t8eYIJIwG9Yt3WJh0t80D-9e9cz_Dwktkji9RTsepkcGaDb1RwDfidJIAiTIcXu_fYaPqCs"
+              src="/hwy-magician-logo.png"
             />
             
             <div className="mt-stack-lg text-center z-10">
